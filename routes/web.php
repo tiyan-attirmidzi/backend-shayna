@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', 'ControllerDashboards@index');
-});
+// Route::group(['prefix' => 'admin'], function () {
+//     Route::get('/', 'ControllerDashboards@index')->middleware('auth');
+// });
+
+Route::get('/', 'ControllerDashboards@index')->middleware('auth');
+
+Auth::routes(['register' => false]);
