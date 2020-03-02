@@ -16,6 +16,6 @@
 //     Route::get('/', 'ControllerDashboards@index')->middleware('auth');
 // });
 
-Route::get('/', 'ControllerDashboards@index')->middleware('auth');
-
+Route::get('/', 'ControllerDashboards@index')->middleware('auth')->name('home');
 Auth::routes(['register' => false]);
+Route::resource('products', 'ControllerProducts');
